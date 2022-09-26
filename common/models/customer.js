@@ -27,6 +27,7 @@ module.exports = function (Customer) {
   app.get("/cust", async (req, res) => {
     // let data = Customer.app.models.find();
     // console.log("data", data);
+    console.log("adding logs ");
     let connector = Customer.app.datasources.mysqldata.connector;
     let cust = Customer.find();
     //console.log("connector", connector);
