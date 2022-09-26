@@ -1,0 +1,48 @@
+{
+  "name": "Customer",
+  "base": "PersistedModel",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "mysql":{
+    "schema":"demo",
+    "table":"customers"
+  },
+  "properties": {
+    "customerId": {
+      "type": "number",
+      "id": true,
+      "required": true,
+      "length": null,
+      "precision": 10,
+      "scale": 0,
+      "mysql": {
+        "columnName": "customerId",
+        "dataType": "int",
+        "dataLength": null,
+        "dataPrecision": 10,
+        "dataScale": 0,
+        "nullable": "Y"
+      }
+    },
+    "custName": {
+      "type": "string",
+      "required": true
+    },
+    "custEmail": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "orders":{
+      "type":"hasMany",
+      "model":"Order",
+      "primaryKey":"customerId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
